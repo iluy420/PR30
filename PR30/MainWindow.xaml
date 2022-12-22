@@ -1,0 +1,66 @@
+﻿<Window x:Class="PR30.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PR30"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Icon="budget.png"
+        Closing="Window_Closing">
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"
+               Source="../LoginPage.xaml"
+               Grid.Row="1"
+               Grid.Column="0"
+               Grid.ColumnSpan="4"
+               Navigated="MainFrame_Navigated"/>
+
+        <Menu x:Name="MainMenu" Grid.Row="0"
+              Grid.Column="0" Grid.ColumnSpan="4"
+              HorizontalAlignment="Left"
+              VerticalAlignment="Top">
+            <MenuItem Header="Страницы">
+                <MenuItem x:Name="WorkingWithUsers"
+                          Header="Работа с пользователями"
+                          Click="WorkingWithUsers_Click"/>
+                
+                <MenuItem x:Name="WorkingWithExpenseCategories" 
+                          Header="Работа с категориями расхода"
+                          Click="WorkingWithExpenseCategories_Click"/>
+
+                <MenuItem x:Name="WorkingWithIncomeCategories" 
+                          Header="Работа с категориями дохода"
+                          Click="WorkingWithIncomeCategories_Click"/>
+
+                <MenuItem x:Name="WorkingWithIncomeAndExpenses" 
+                          Header="Работа с доходоми и расходами"
+                          Click="WorkingWithIncomeAndExpenses_Click"/>
+                
+                <MenuItem x:Name="ExcelReports" 
+                          Header="Отчеты Excel"
+                          Click="ExcelReports_Click"/>
+                
+                <MenuItem x:Name="WordReports" 
+                          Header="Отчеты Word"
+                          Click="WordReports_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="ExitAccount" 
+                      Header="Выйти из аккаунта" 
+                      Click="ExitAccount_Click"/>
+        </Menu>
+    </Grid>
+</Window>

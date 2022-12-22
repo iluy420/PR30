@@ -1,0 +1,63 @@
+﻿<Page x:Class="PR30.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PR30"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegistrationPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="NamePage" Grid.Row="0"
+                   Grid.Column="0" Grid.ColumnSpan="5"
+                   HorizontalAlignment="Center"
+                   FontSize="32" VerticalAlignment="Center"/>
+
+        <Label Content="Login" Grid.Row="1" Grid.Column="0" Target="{Binding ElementName=UserLogin}"/>
+        <TextBox x:Name="UserLogin"
+                 Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
+                 ToolTip="Введите логин"/>
+
+        <Label x:Name="LabelUserPassword" Content="Password" Grid.Row="2" Grid.Column="0" Target="{Binding ElementName=UserPassword}"/>
+        <PasswordBox x:Name="UserPassword"
+                 Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"
+                 ToolTip="Введите пароль"/>
+
+        <Label x:Name="LabelUserCopuPassword" Content="CopuPassword" Grid.Row="3" Grid.Column="0" Target="{Binding ElementName=UserCopuPassword}"/>
+        <PasswordBox x:Name="UserCopuPassword"
+                 Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"
+                 ToolTip="Повторите пароль"/>
+
+        <Label x:Name="LabelCheckBox_Password" Content="Я хочу изменить пароль пользователя" Grid.Row="4" Grid.Column="0"
+               Grid.ColumnSpan="2" Target="{Binding ElementName=CheckBox_Password}"/>
+        <CheckBox x:Name="CheckBox_Password" Grid.Row="4" Grid.Column="2"
+                  ToolTip="Хотители вы изменить пароль пользователя" Click="CheckBox_Password_Click"/>
+
+        <Label x:Name="LabelComboBox_Role" Content="Role" Grid.Row="5" Grid.Column="0" Target="{Binding ElementName=ComboBox_Role}"/>
+        <ComboBox x:Name="ComboBox_Role" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"
+                  ToolTip="Выберите роль"/>
+        
+        <Button x:Name="Btn_Registration"
+                Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3"
+                Content="Сохранить"
+                ToolTip="Зарегистрировать или добавить нового пользователя" Click="Btn_Registration_Click"/>
+    </Grid>
+</Page>

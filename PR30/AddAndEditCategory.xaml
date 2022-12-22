@@ -1,0 +1,33 @@
+﻿<Page x:Class="PR30.AddAndEditCategory"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PR30"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddAndEditCategory">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="NamePage" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="32"/>
+        <TextBox x:Name="CategoryName"
+                 Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button x:Name="AddButton" Content="Сохранить"
+                Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Click="AddButton_Click"/>
+    </Grid>
+</Page>
